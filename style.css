@@ -1,4 +1,3 @@
-/* Reset some basic styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +12,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header styling */
 header {
     text-align: center;
     padding: 20px 0;
@@ -26,7 +24,6 @@ h1 {
     text-shadow: 1px 1px 2px #aaa;
 }
 
-/* Main layout */
 main {
     display: flex;
     justify-content: center;
@@ -35,13 +32,12 @@ main {
     flex-wrap: wrap;
 }
 
-/* Pet image container */
 .pet-image-container {
     text-align: center;
 }
 
 .pet-image {
-    height: 300px;         /* fixed height */
+    height: 300px;         
     object-fit: cover;     /* crop/scale image to fit container without stretching */
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
@@ -52,7 +48,6 @@ main {
     transform: scale(1.05);
 }
 
-/* Dashboard styling */
 .dashboard {
     background: #ffffffcc;
     padding: 20px 25px;
@@ -93,9 +88,9 @@ main {
 .button-container button:hover,
 .rename-button,
 .show-rename-button {
-    padding: 6px 8px;      /* reduce padding */
-    font-size: 0.9rem;     /* smaller font */
-    width: 80px;           /* fixed width to fit text */
+    padding: 6px 8px;      
+    font-size: 0.9rem;     
+    width: 80px;         
     text-align: center;
 }
 
@@ -105,7 +100,6 @@ main {
     box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
-/* Input box for rename */
 .name-input {
     padding: 6px 8px;
     width: calc(100% - 20px);
@@ -121,13 +115,11 @@ main {
     box-shadow: 0 0 5px #1e2835;
 }
 
-/* Rename container */
 .rename-container {
-    display: none; /* initially hidden */
+    display: none;
     margin: 8px 0;
 }
 
-/* Energy bar */
 .energy-bar-container {
     width: 100%;
     height: 20px;
@@ -140,7 +132,7 @@ main {
 
 .energy-bar {
     height: 100%;
-    width: 50%; /* initial value */
+    width: 50%; 
     background-color: green;
     transition: width 0.3s ease, background-color 0.3s ease;
 }
@@ -151,7 +143,7 @@ main {
         flex-direction: column;
         align-items: center;
     }
-
+    
     .dashboard {
         width: 90%;
     }
