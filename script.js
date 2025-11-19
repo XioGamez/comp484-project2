@@ -63,7 +63,7 @@ function changePetImage(action) {
 
     $(".pet-image").attr("src", imgPath);
 
-    // Return to default image after 1 second
+    // Return to default image after 5 second
     setTimeout(() => {
         $(".pet-image").attr("src", "images/perry.webp");
     }, 5000);
