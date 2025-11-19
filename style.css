@@ -1,82 +1,158 @@
-
+/* Reset some basic styles */
 * {
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: helvetica, arial, sans-serif;
-    margin: 25px;
-  }
-  
-  main {
-    display:block;
-    height:175px;
-  }
-  
-  header {
-    border-bottom: 1px solid black;
-  }
-  
-  h1 {
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  p {
-    max-width: 600px;
-  }
-  
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  footer {
-    padding-top: 25px;
-    border-top: 1px solid black;
-  }
-  
-  footer a {
-    float:left;
-    margin:5px;
-  }
-  
-  .pet-image {
-    height:250px;
-  }
-  
-  .dashboard div {
-    display:block;
-  }
-  
-  .pet-image-container {
-    float:left;
-    padding:10px;
-  }
-  
-  .dashboard {
-    float:left;
-    padding:20px;
-  }
-  
-  .button-container {
-    margin-top:20px;
-  }
-  
-  .button-container button {
-    width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      display: inline-block;
-      float: left;
-    font-size:15px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #f0f8ff, #d9e6f2);
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #1e2835;
+    text-shadow: 1px 1px 2px #aaa;
+}
+
+/* Main layout */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Pet image container */
+.pet-image-container {
+    text-align: center;
+}
+
+.pet-image {
+    height: 300px;         /* fixed height */
+    object-fit: cover;     /* crop/scale image to fit container without stretching */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.pet-image:hover {
+    transform: scale(1.05);
+}
+
+/* Dashboard styling */
+.dashboard {
+    background: #ffffffcc;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    min-width: 280px;
+}
+
+/* Stats */
+.dashboard div {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.button-container button,
+.rename-button,
+.show-rename-button {
+    flex: 1 1 100px;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
     background-color: #1e2835;
-    border-color: #404853;
-    cursor:pointer;
-    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
+    border: none;
+    border-radius: 10px;
     color: #fafafa;
-  }
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.button-container button:hover,
+.rename-button,
+.show-rename-button {
+    padding: 6px 8px;      /* reduce padding */
+    font-size: 0.9rem;     /* smaller font */
+    width: 80px;           /* fixed width to fit text */
+    text-align: center;
+}
+
+/* Hovered class for JS hover effect */
+.hovered {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Input box for rename */
+.name-input {
+    padding: 6px 8px;
+    width: calc(100% - 20px);
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 1rem;
+}
+
+.name-input:focus {
+    border-color: #1e2835;
+    box-shadow: 0 0 5px #1e2835;
+}
+
+/* Rename container */
+.rename-container {
+    display: none; /* initially hidden */
+    margin: 8px 0;
+}
+
+/* Energy bar */
+.energy-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.energy-bar {
+    height: 100%;
+    width: 50%; /* initial value */
+    background-color: green;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard {
+        width: 90%;
+    }
+}
