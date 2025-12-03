@@ -71,7 +71,7 @@ function changePetImage(action) {
 
 // Action functions
 function clickedTreatButton() {
-    pet_info.happiness += 3;
+    pet_info.happiness += "3";
     pet_info.weight += 0.2;
     pet_info.energy += 0.5;
     updatePetState("treat");
